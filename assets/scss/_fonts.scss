@@ -1,0 +1,59 @@
+@font-face {
+	font-weight: 400;
+	font-family: RobotoSerif;
+	font-style: normal;
+	src:
+		url(assets/fonts/RobotoSerif-Regular.woff2) format("woff2"),
+		url(assets/fonts/RobotoSerif-Regular.woff) format("woff");
+	font-display: swap;
+}
+
+@font-face {
+	font-weight: 300;
+	font-family: Roboto;
+	font-style: normal;
+	src:
+		url(assets/fonts/Roboto-Light.woff2) format("woff2"),
+		url(assets/fonts/Roboto-Light.woff) format("woff");
+	font-display: swap;
+}
+
+@font-face {
+	font-weight: 400;
+	font-family: Roboto;
+	font-style: normal;
+	src:
+		url(assets/fonts/Roboto-Regular.woff2) format("woff2"),
+		url(assets/fonts/Roboto-Regular.woff) format("woff");
+	font-display: swap;
+}
+
+@font-face {
+	font-weight: 500;
+	font-family: Roboto;
+	font-style: normal;
+	src:
+		url(assets/fonts/Roboto-Medium.woff2) format("woff2"),
+		url(assets/fonts/Roboto-Medium.woff) format("woff");
+	font-display: swap;
+}
+
+@font-face {
+	font-weight: 700;
+	font-family: Roboto;
+	font-style: normal;
+	src:
+		url(assets/fonts/Roboto-Bold.woff2) format("woff2"),
+		url(assets/fonts/Roboto-Bold.woff) format("woff");
+	font-display: swap;
+}
+
+@font-face {
+	font-weight: 400;
+	font-family: TenorSans;
+	font-style: normal;
+	src:
+		url(assets/fonts/TenorSans.woff2) format("woff2"),
+		url(assets/fonts/TenorSans.woff) format("woff");
+	font-display: swap;
+}
