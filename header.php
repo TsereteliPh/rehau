@@ -11,7 +11,53 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
+<?php
+	$tel = get_field( 'tel', 'options' );
+	$socials = get_field( 'socials', 'options' );
+?>
 <header class="header">
+	<div class="container header__container">
+		<a href="<?php echo bloginfo( 'url' ); ?>" class="header__logo" aria-label="Логотип компании Рехау"></a>
 
+		<?php if ( $socials || $tel ) : ?>
+			<div class="header__callback callback">
+				<?php if ( $socials ) : ?>
+					<div class="callback__socials-wrapper">
+						<div class="callback__socials-text">Связаться с нами:</div>
+
+						<div class="callback__socials">
+							<?php foreach ( $socials as $social ) : ?>
+								<a href="<?php echo $social['link']; ?>" class="callback__socilas-link">
+									<svg width="35" height="35"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-<?php echo $social['icon']; ?>"></use></svg>
+								</a>
+							<?php endforeach; ?>
+						</div>
+					</div>
+				<?php endif; ?>
+
+				<?php if ( $tel ) : ?>
+					<div class="callback__tel-wrapper">
+						<a href="<?php echo preg_replace( '/[^0-9,+]/', '', $tel ); ?>" class="callback__tel"><?php echo $tel; ?></a>
+
+						<div class="callback__tel-text">Бесплатная консультация</div>
+					</div>
+				<?php endif; ?>
+			</div>
+		<?php endif; ?>
+
+		<button class="header__burger" type="button">
+			<span></span>
+		</button>
+	</div>
+
+	<div class="header__drop">
+		<?php wp_nav_menu( array(
+			'theme_location' => 'menu_main',
+			'container' => '',
+			'menu_id' => 'menu-main',
+			'menu_class' => 'reset-list header__menu'
+		) ); ?>
+	</div>
 </header>
+
 <main class="main">

@@ -1,0 +1,60 @@
+.callback {
+	display: flex;
+	gap: 15px;
+	align-items: center;
+
+	&__socials-text,
+	&__tel-text {
+		font-size: 12px;
+		text-transform: uppercase;
+		text-shadow: var(--shadow);
+	}
+
+	&__socials-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+		align-items: center;
+	}
+
+	&__socials {
+		display: flex;
+		gap: 15px;
+		align-items: center;
+	}
+
+	&__socilas-link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 10px;
+		background: var(--primary);
+		border-radius: 10px;
+
+		svg {
+			color: var(--fc-light);
+			filter: drop-shadow(var(--shadow));
+
+			@include hg {
+				width: 25px;
+				height: auto;
+			}
+		}
+	}
+
+	&__tel-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+	}
+
+	&__tel {
+		font-size: 20px;
+		text-shadow: var(--shadow);
+		@include ui-link(var(--fc-dark));
+	}
+
+	&__tel-text {
+		color: var(--primary);
+	}
+}
