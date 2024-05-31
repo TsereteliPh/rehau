@@ -1,0 +1,170 @@
+.footer {
+	padding: 75px 0 25px;
+	background: #afafaf;
+
+	@include hg {
+		padding: 60px 0 25px;
+	}
+
+	@include xs {
+		padding: 30px 0 15px;
+	}
+
+	&__content {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+
+		@include md {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 30px 60px;
+		}
+
+		@include xs {
+			grid-template-columns: 1fr;
+			justify-items: center;
+		}
+	}
+
+	&__logo {
+		display: flex;
+		width: 185px;
+		height: auto;
+		aspect-ratio: 675/225;
+		background: url(assets/images/logo-main.png) no-repeat 50% / contain;
+		transition: var(--transition);
+
+		@include hg {
+			width: 150px;
+		}
+
+		@include mouse {
+
+			&:hover {
+				scale: 1.02;
+			}
+		}
+	}
+
+	&__advantages,
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		max-width: 240px;
+		font-family: var(--font-secondary);
+
+		@include md {
+			order: 1;
+			max-width: none;
+		}
+
+		@include xs {
+			gap: 10px;
+			align-items: center;
+			text-align: center;
+		}
+	}
+
+	&__info {
+
+		@include md {
+			text-align: right;
+		}
+	}
+
+	&__label {
+		color: var(--primary);
+		font-size: 20px;
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+
+		@include xs {
+			gap: 10px;
+		}
+	}
+
+	&__item {
+		position: relative;
+		padding-left: 15px;
+
+		@include xs {
+			padding-left: 0;
+		}
+
+		&::before {
+			position: absolute;
+			top: 5px;
+			left: 0;
+			width: 5px;
+			height: 5px;
+			background: var(--primary);
+			border-radius: 50%;
+			box-shadow: 0 0 3px 3px var(--primary);
+			content: "";
+
+			@include xs {
+				display: none;
+			}
+		}
+
+		span {
+			font-weight: 700;
+		}
+	}
+
+	&__rights {
+		font-weight: 700;
+	}
+
+	&__callback {
+
+		@include lg {
+			flex-direction: column;
+		}
+
+		@include md {
+			flex-direction: row;
+			justify-self: end;
+		}
+
+		@include sm {
+			flex-direction: column;
+		}
+
+		@include xs {
+			flex-direction: column-reverse;
+			justify-self: center;
+		}
+	}
+
+	&__links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px 30px;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		margin-top: 120px;
+		padding-top: 25px;
+		border-top: 1px solid var(--fc-dark);
+
+		@include md {
+			margin-top: 60px;
+		}
+
+		@include xs {
+			padding-top: 15px;
+		}
+
+		a {
+			font-size: 20px;
+			@include ui-link(var(--primary));
+		}
+	}
+}
