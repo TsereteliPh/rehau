@@ -38,7 +38,7 @@
                             <?php if ( $welcome['discount'] ) echo 'со скидкой <span>' . $welcome['discount'] . '%</span>'; ?>
                         </div>
 
-                        <button class="btn welcome__callback-btn" type="button">Рассчитать стоимость окон со скидкой</button>
+                        <button class="btn welcome__callback-btn" type="button" data-fancybox data-src="#measurements">Рассчитать стоимость окон со скидкой</button>
                     </div>
                 </div>
 
@@ -52,6 +52,10 @@
                         <input type="tel" class="input welcome__form-input" name="client_tel" placeholder="Телефон" required>
 
                         <button class="btn welcome__form-submit" type="submit">Отправить</button>
+
+						<input type="text" class="hidden" name="page_request" value="<?php echo is_archive() ? get_the_archive_title() : get_the_title(); ?>">
+
+						<?php wp_nonce_field( 'Заявка', 'welcome-callback-nonce' ); ?>
                     </form>
 
                     <div class="welcome__form-policy">

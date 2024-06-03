@@ -1,0 +1,155 @@
+.modal {
+	position: relative;
+	display: none;
+	flex-direction: column;
+	gap: 30px;
+	width: 100%;
+	max-width: 870px;
+	padding: 55px 70px 60px;
+	color: var(--fc-light);
+	background: none;
+	border-radius: 20px;
+
+	@include sm {
+		padding: 40px 60px;
+	}
+
+	@include xs {
+		padding: 40px 20px;
+	}
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 0;
+		width: 100%;
+		height: 100%;
+		background: url(assets/images/form-bg-1.jpg) no-repeat 50% / cover;
+		border-radius: 20px;
+		filter: blur(4px);
+		content: "";
+	}
+
+	> * {
+		position: relative;
+		z-index: var(--ui-index-1);
+	}
+
+	&--success {
+		align-items: center;
+
+		&::before {
+			background-image: url(assets/images/form-bg-2.jpg);
+			filter: blur(5px);
+		}
+
+		.modal__title {
+			text-align: center;
+
+			span {
+				display: block;
+			}
+		}
+
+		.modal__text {
+			text-align: center;
+		}
+	}
+
+	&--measurements {
+
+		@include sm {
+			align-items: center;
+			text-align: center;
+		}
+
+		&::after {
+			position: absolute;
+			right: 30px;
+			bottom: 0;
+			width: 410px;
+			height: auto;
+			aspect-ratio: 410/465;
+			background: url(assets/images/person-measurements.png) no-repeat 50% / contain;
+			content: "";
+
+			@include hg {
+				width: 350px;
+			}
+
+			@include sm {
+				display: none;
+			}
+		}
+
+		.main-form__text {
+			max-width: 290px;
+
+			@include sm {
+				max-width: none;
+			}
+		}
+	}
+
+	&__title,
+	&__text {
+		text-shadow: var(--shadow);
+	}
+
+	&__title {
+		max-width: 420px;
+	}
+
+	&__form {
+
+		@include sm {
+			order: 1;
+			max-width: 650px;
+		}
+
+		.main-form__form {
+
+			@include sm {
+				max-width: none;
+			}
+		}
+	}
+
+	&__discount {
+		position: absolute;
+		top: 125px;
+		left: 440px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 180px;
+		height: auto;
+		aspect-ratio: 1/1;
+		font-size: 34px;
+		text-align: center;
+		text-transform: uppercase;
+		background: var(--primary);
+		border-radius: 50%;
+
+		@include hg {
+			left: 480px;
+			width: 120px;
+			font-size: 22px;
+		}
+
+		@include md {
+			left: 420px;
+		}
+
+		@include sm {
+			position: static;
+			width: 100%;
+			max-width: 320px;
+			aspect-ratio: auto;
+			padding: 15px 10px;
+			font-size: 16px;
+			border-radius: 5px;
+		}
+	}
+}
