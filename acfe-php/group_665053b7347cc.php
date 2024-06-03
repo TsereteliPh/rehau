@@ -56,17 +56,45 @@ acf_add_local_field_group(array(
 			'layouts' => array(
 				'layout_665053cdeb0e5' => array(
 					'key' => 'layout_665053cdeb0e5',
-					'name' => '',
-					'label' => '',
+					'name' => 'glazing-types',
+					'label' => 'Виды остекления',
 					'display' => 'block',
 					'sub_fields' => array(
+						array(
+							'key' => 'field_665de1461dbd5',
+							'label' => '',
+							'name' => '',
+							'aria-label' => '',
+							'type' => 'clone',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'clone' => array(
+								0 => 'group_665ddd6b251fd',
+							),
+							'display' => 'seamless',
+							'layout' => 'block',
+							'prefix_label' => 0,
+							'prefix_name' => 0,
+							'acfe_field_group_condition' => 0,
+							'acfe_seamless_style' => 0,
+							'acfe_clone_modal' => 0,
+							'acfe_clone_modal_close' => 0,
+							'acfe_clone_modal_button' => '',
+							'acfe_clone_modal_size' => 'large',
+						),
 					),
 					'min' => '',
 					'max' => '',
+					'acfe_flexible_thumbnail' => '',
 					'acfe_flexible_render_template' => false,
 					'acfe_flexible_render_style' => false,
 					'acfe_flexible_render_script' => false,
-					'acfe_flexible_thumbnail' => false,
 					'acfe_flexible_settings' => false,
 					'acfe_flexible_settings_size' => 'medium',
 					'acfe_layout_locations' => array(
@@ -124,7 +152,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1716540409,
+	'modified' => 1717428563,
 ));
 
 endif;
