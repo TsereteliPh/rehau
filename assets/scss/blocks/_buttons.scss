@@ -1,0 +1,12 @@
+.btn {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	justify-content: center;
+	padding: 15px 10px;
+	color: var(--fc-light);
+	font-size: clamp(0.875rem, 0.75rem + 0.556vw, 1.25rem);
+	background: var(--primary);
+	border: none;
+	border-radius: 5px;
+}
