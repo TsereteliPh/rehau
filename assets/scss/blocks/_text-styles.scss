@@ -1,0 +1,26 @@
+.st-ul {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+
+	@include xs {
+		gap: 10px;
+	}
+
+	li {
+		position: relative;
+		padding-left: 15px;
+
+		&::before {
+			position: absolute;
+			top: 5px;
+			left: 0;
+			width: 5px;
+			height: 5px;
+			background: var(--primary);
+			border-radius: 50%;
+			box-shadow: 0 0 3px 3px var(--primary);
+			content: "";
+		}
+	}
+}

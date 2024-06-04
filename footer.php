@@ -15,7 +15,7 @@
 				<div class="footer__advantages">
 					<div class="footer__label">Преимущества</div>
 
-					<ul class="reset-list footer__list">
+					<ul class="reset-list st-ul footer__list">
 						<?php foreach ( $advantages as $advantage ) : ?>
 							<li class="footer__item">
 								<?php if ( $advantage['highlighted'] ) : ?>
