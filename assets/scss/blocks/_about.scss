@@ -1,0 +1,119 @@
+.about {
+	position: relative;
+	padding: 70px 0 130px;
+	background: url(assets/images/about-bg.jpg) no-repeat 50% / cover;
+
+	@include sm {
+		padding: 60px 0;
+	}
+
+	@include xs {
+		padding: 30px 0;
+	}
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 60%;
+		height: 100%;
+		background: linear-gradient(to right, #fff 0%, #fff 4rem, rgba(#fff, 0) 100%);
+		content: "";
+
+		@include md {
+			width: 80%;
+		}
+
+		@include sm {
+			width: 100%;
+			background: rgba(#fff, 0.8);
+		}
+	}
+
+	&__container {
+		position: relative;
+		z-index: var(--ui-index-1);
+		margin: 0 4rem;
+
+		@include hg {
+			margin: 0 1.5rem;
+		}
+	}
+
+	&__title {
+		max-width: 350px;
+		color: var(--primary);
+
+		@include sm {
+			max-width: none;
+			text-align: center;
+		}
+	}
+
+	&__text {
+		max-width: 530px;
+		margin-top: 30px;
+		font-size: 20px;
+
+		@include sm {
+			margin: 20px auto 0;
+			text-align: center;
+		}
+
+		@include xs {
+			font-size: 18px;
+		}
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 50px;
+		max-width: 480px;
+		margin-top: 105px;
+
+		@include hg {
+			margin-top: 60px;
+		}
+
+		@include sm {
+			margin: 60px auto 0;
+		}
+
+		@include xs {
+			grid-template-columns: 1fr;
+			gap: 30px;
+		}
+	}
+
+	&__item {
+
+		@include xs {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	&__item-number {
+		color: var(--primary);
+		font-size: 64px;
+		line-height: 0.8;
+
+		@include sm {
+			font-size: 50px;
+		}
+
+		span {
+			font-size: 20px;
+		}
+	}
+
+	&__item-text {
+		font-size: 20px;
+
+		@include xs {
+			font-size: 16px;
+		}
+	}
+}
