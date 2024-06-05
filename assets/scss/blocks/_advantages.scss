@@ -1,0 +1,175 @@
+.advantages {
+	position: relative;
+	min-height: 780px;
+	margin: 80px 0 40px;
+	background: url(assets/images/advantages-bg.jpg) no-repeat 50% / 100% auto;
+
+	@include hg {
+		min-height: 650px;
+		margin: 60px 0 40px;
+	}
+
+	@include md {
+		min-height: 550px;
+	}
+
+	@include sm {
+		margin: 40px 0 30px;
+		background-size: 800px auto;
+	}
+
+	@include xs {
+		min-height: 440px;
+		background-position: -80px 50%;
+		background-size: 1000px auto;
+	}
+
+	&::before,
+	&::after {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: 200px;
+		content: "";
+
+		@include md {
+			height: 150px;
+		}
+
+		@include xs {
+			height: 100px;
+		}
+	}
+
+	&::before {
+		top: 0;
+		background: linear-gradient(to bottom, #fff 0%, rgba(#fff, 0) 100%);
+	}
+
+	&::after {
+		bottom: 0;
+		background: linear-gradient(to top, #fff 0%, rgba(#fff, 0) 100%);
+	}
+
+	&__title {
+		text-align: center;
+
+		span {
+			display: block;
+		}
+	}
+
+	&__text {
+		max-width: 420px;
+		margin: 10px auto 0;
+		font-size: 14px;
+		text-align: center;
+	}
+
+	&__list {
+		position: relative;
+		z-index: var(--ui-index-1);
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 100px;
+		margin-top: 160px;
+		padding-right: 100px;
+		counter-reset: advantages-counter 0;
+
+		@include hg {
+			margin-top: 80px;
+			padding-right: 0;
+		}
+
+		@include md {
+			gap: 80px;
+		}
+
+		@include sm {
+			gap: 60px;
+		}
+
+		@include xs {
+			grid-template-columns: 1fr;
+			gap: 10px;
+			width: fit-content;
+			margin: 30px auto 0 0;
+		}
+	}
+
+	&__item {
+		position: relative;
+		height: fit-content;
+		padding: 75px 0 0 100px;
+		counter-increment: advantages-counter 1;
+
+		@include md {
+			padding: 50px 0 0 85px;
+		}
+
+		@include sm {
+			padding: 40px 0 0 70px;
+		}
+
+		&:nth-child(even) {
+			justify-self: end;
+		}
+
+		&:nth-child(3) {
+			margin-left: 100px;
+
+			@include md {
+				margin-left: 60px;
+			}
+
+			@include sm {
+				margin-left: 0;
+			}
+		}
+
+		&:nth-child(4) {
+			margin-right: 100px;
+
+			@include md {
+				margin-right: 60px;
+			}
+
+			@include sm {
+				margin-right: 0;
+			}
+		}
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			color: var(--primary);
+			font-size: 90px;
+			opacity: 0.5;
+			content: counter(advantages-counter, decimal-leading-zero);
+
+			@include md {
+				font-size: 76px;
+			}
+
+			@include sm {
+				font-size: 60px;
+			}
+		}
+	}
+
+	&__item-label {
+		font-weight: 700;
+		font-size: 20px;
+		font-family: var(--font-secondary);
+
+		@include sm {
+			font-size: 18px;
+		}
+	}
+
+	&__item-text {
+		font-size: 10px;
+		font-family: var(--font-secondary);
+	}
+}
