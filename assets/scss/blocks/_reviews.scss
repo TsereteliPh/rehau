@@ -1,4 +1,6 @@
 .reviews {
+	position: relative;
+	z-index: var(--ui-index-1);
 	margin: 80px 0 40px;
 	overflow: hidden;
 
@@ -61,6 +63,8 @@
 		gap: 50px;
 		min-height: 250px;
 		padding: 45px 30px;
+		background: var(--bg-primary);
+		border-radius: 5px;
 
 		@include md {
 			flex-direction: column;

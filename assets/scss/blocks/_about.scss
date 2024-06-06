@@ -1,5 +1,6 @@
 .about {
 	position: relative;
+	z-index: var(--ui-index-1);
 	padding: 70px 0 130px;
 	background: url(assets/images/about-bg.jpg) no-repeat 50% / cover;
 

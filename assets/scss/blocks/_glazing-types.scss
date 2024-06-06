@@ -1,4 +1,6 @@
 .glazing-types {
+	position: relative;
+	z-index: var(--ui-index-1);
 	margin: 60px 0 40px;
 
 	@include sm {

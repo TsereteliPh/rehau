@@ -1,4 +1,6 @@
 .gallery {
+	position: relative;
+	z-index: var(--ui-index-1);
 	margin: 80px 0 40px;
 
 	@include hg {

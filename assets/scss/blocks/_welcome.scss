@@ -1,4 +1,6 @@
 .welcome {
+	position: relative;
+	z-index: var(--ui-index-1);
 	padding: 200px 0 50px;
 	background: url(assets/images/welcome-bg.jpg) no-repeat 50% top / 100% auto;
 
