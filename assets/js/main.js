@@ -280,7 +280,7 @@ try {
 
 //Swiper
 
-//Слайдер blocks/rest
+//Слайдер blocks/reviews
 
 const reviewsCarousel = document.querySelector('.reviews__slider');
 
@@ -305,6 +305,17 @@ if (reviewsCarousel) {
 				spaceBetween: 80,
 			}
 		},
+	});
+}
+
+//Слайдер blocks/peculiarities
+
+const peculiaritiesCarousel = document.querySelector('.peculiarities__container');
+
+if (peculiaritiesCarousel && window.innerWidth < 992) {
+	let peculiaritiesSwiper = new Swiper(peculiaritiesCarousel, {
+		slidesPerView: 'auto',
+		spaceBetween: 30,
 	});
 }
 

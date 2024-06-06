@@ -1,0 +1,141 @@
+.peculiarities {
+	position: relative;
+	margin: 130px 0 60px;
+
+	@include hg {
+		margin: 80px 0 40px;
+	}
+
+	@include md {
+		margin: 60px 0 30px;
+		overflow: hidden;
+	}
+
+	&::before {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 1260px;
+		height: auto;
+		aspect-ratio: 1/1;
+		background: url(assets/images/leaf-bg.png) no-repeat 50% / contain;
+		transform: translate(-50%, -50%) rotate(180deg);
+		content: "";
+
+		@include hg {
+			width: 1000px;
+		}
+
+		@include md {
+			width: 100%;
+			max-width: 600px;
+		}
+	}
+
+	&__container {
+
+		@include md {
+			overflow: visible;
+		}
+	}
+
+	&__title {
+		color: var(--primary);
+		text-align: center;
+
+		span {
+			display: block;
+			color: var(--fc-dark);
+		}
+	}
+
+	&__text {
+		max-width: 1000px;
+		margin: 40px auto 0;
+		font-size: 14px;
+		text-align: center;
+
+		@include hg {
+			margin: 20px auto 0;
+		}
+	}
+
+	&__list {
+		display: flex;
+		gap: 30px;
+		justify-content: space-between;
+		margin-top: 80px;
+
+		@include hg {
+			gap: 20px;
+			margin-top: 40px;
+		}
+
+		@include md {
+			gap: 0;
+			overflow: visible;
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		flex-shrink: 1;
+		gap: 15px;
+		align-items: center;
+		justify-content: center;
+		max-width: 280px;
+		height: auto;
+		padding: 15px 25px 30px;
+		background: #e3e3e3;
+
+		@include lg {
+			padding: 15px 15px 30px;
+		}
+
+		@include md {
+			flex-shrink: 0;
+			padding: 20px 30px 40px;
+		}
+
+		@include sm {
+			max-width: 240px;
+			padding: 15px 15px 30px;
+		}
+	}
+
+	&__item-img {
+		display: flex;
+		align-items: center;
+		width: 100px;
+		height: auto;
+		max-height: 110px;
+		margin-bottom: 25px;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	&__item-label {
+		font-weight: 700;
+		font-size: 20px;
+		font-family: var(--font-secondary);
+		text-align: center;
+
+		@include sm {
+			font-size: 18px;
+		}
+
+		@include xs {
+			font-size: 16px;
+		}
+	}
+
+	&__item-text {
+		font-size: 14px;
+		text-align: center;
+	}
+}
