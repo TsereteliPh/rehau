@@ -1,0 +1,272 @@
+.reviews {
+	margin: 80px 0 40px;
+	overflow: hidden;
+
+	@include hg {
+		margin: 60px 0 40px;
+	}
+
+	@include sm {
+		margin: 40px 0 30px;
+	}
+
+	&__title {
+		max-width: 950px;
+		margin: 0 auto;
+		color: var(--primary);
+		text-align: center;
+
+		span {
+			color: var(--fc-dark);
+		}
+	}
+
+	&__text {
+		max-width: 400px;
+		margin: 10px auto 0;
+		font-size: 14px;
+		text-align: center;
+
+		span {
+			color: var(--primary);
+			font-weight: 700;
+			font-family: var(--font-secondary);
+		}
+	}
+
+	&__wrapper {
+		position: relative;
+		margin-top: 60px;
+		padding: 10px 130px;
+		overflow: hidden;
+
+		@include hg {
+			margin-top: 30px;
+			padding: 10px 60px;
+		}
+
+		@include sm {
+			margin-top: 20px;
+			padding: 5px;
+		}
+	}
+
+	&__slider {
+		overflow: visible;
+	}
+
+	&__item {
+		position: relative;
+		display: flex;
+		gap: 50px;
+		min-height: 250px;
+		padding: 45px 30px;
+
+		@include md {
+			flex-direction: column;
+			gap: 20px;
+		}
+
+		@include xs {
+			padding: 30px 15px;
+		}
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border: 1px solid rgba(#000, 0.5);
+			border-radius: 5px;
+			filter: blur(4px);
+			content: "";
+		}
+	}
+
+	&__item-gallery,
+	&__item-info {
+		position: relative;
+		z-index: var(--ui-index-1);
+	}
+
+	&__item-gallery {
+		display: grid;
+		flex: 1 1;
+		grid-template-columns: 1fr 1fr;
+		gap: 10px 25px;
+		width: 100%;
+		max-width: 360px;
+
+		@include md {
+			flex: 0 1;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 15px;
+			order: 1;
+			max-width: none;
+		}
+
+		@include sm {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	&__item-link {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 1/1;
+		overflow: hidden;
+		border-radius: 5px;
+
+		@include md {
+			aspect-ratio: 16/9;
+		}
+
+		@include mouse {
+
+			&:hover {
+
+				img {
+					scale: 1.05;
+				}
+			}
+		}
+
+		&:first-child {
+			grid-column: span 2;
+			aspect-ratio: 9/5;
+
+			@include md {
+				grid-column: auto;
+				aspect-ratio: 16/9;
+			}
+		}
+
+		&:nth-child(3) {
+
+			@include sm {
+				display: none;
+			}
+		}
+
+		&.hidden {
+			display: none;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: var(--transition);
+		}
+	}
+
+	&__item-info {
+		display: flex;
+		flex: 1 1;
+		flex-direction: column;
+		gap: 40px;
+		width: 100%;
+
+		@include hg {
+			gap: 20px;
+		}
+
+		@include md {
+			flex: 0 1;
+		}
+	}
+
+	&__item-user {
+		display: flex;
+		gap: 15px;
+		align-items: center;
+	}
+
+	&__item-profile {
+		width: 65px;
+		height: 65px;
+	}
+
+	&__item-name {
+		font-weight: 700;
+		font-size: 20px;
+		font-family: var(--font-secondary);
+
+		@include xs {
+			font-size: 16px;
+		}
+	}
+
+	&__item-text {
+		font-size: 14px;
+	}
+
+	&__controls {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		z-index: var(--ui-index-1);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		padding: 0 20px;
+		transform: translateY(-50%);
+		pointer-events: none;
+
+		@include hg {
+			padding: 0;
+		}
+
+		@include sm {
+			display: none;
+		}
+	}
+
+	&__prev,
+	&__next {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 65px;
+		height: auto;
+		aspect-ratio: 1/1;
+		color: var(--fc-light);
+		font-size: 36px;
+		background: var(--primary);
+		border-radius: 50%;
+		pointer-events: all;
+
+		@include hg {
+			width: 50px;
+			font-size: 28px;
+		}
+
+		@include md {
+			width: 40px;
+			font-size: 22px;
+		}
+	}
+
+	&__prev {
+		transform: rotate(90deg);
+	}
+
+	&__next {
+		transform: rotate(-90deg);
+	}
+
+	&__pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
+		display: none;
+
+		@include sm {
+			display: block;
+			width: fit-content;
+			margin: 20px auto 0;
+			--swiper-theme-color: var(--primary);
+		}
+	}
+}

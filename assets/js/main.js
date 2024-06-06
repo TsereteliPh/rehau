@@ -282,34 +282,29 @@ try {
 
 //Слайдер blocks/rest
 
-const clientsCarousel = document.querySelector('.clients__container');
+const reviewsCarousel = document.querySelector('.reviews__slider');
 
-if (clientsCarousel) {
-	let clientsSwiper = new Swiper(clientsCarousel, {
-		slidesPerView: 'auto',
-		centeredSlides: true,
+if (reviewsCarousel) {
+	let reviewsSwiper = new Swiper(reviewsCarousel, {
+		slidesPerView: 1,
 		spaceBetween: 25,
+		centeredSlides: true,
+		autoHeight: true,
 		navigation: {
-			nextEl: '.slider-panel__next',
-			prevEl: '.slider-panel__prev',
+			nextEl: reviewsCarousel.parentNode.querySelector('.reviews__next'),
+			prevEl: reviewsCarousel.parentNode.querySelector('.reviews__prev'),
+		},
+		pagination: {
+			el: '.reviews__pagination'
 		},
 		breakpoints: {
 			1440: {
-				slidesPerView: 4,
-				centeredSlides: false,
-			},
-			992: {
-				slidesPerView: 3,
-				centeredSlides: false,
+				spaceBetween: 140,
 			},
 			769: {
-				slidesPerView: 2,
-				centeredSlides: false,
-			},
-			577: {
-				centeredSlides: false,
-			},
-		}
+				spaceBetween: 80,
+			}
+		},
 	});
 }
 
