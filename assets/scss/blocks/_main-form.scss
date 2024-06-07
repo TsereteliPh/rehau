@@ -23,6 +23,44 @@
 		}
 	}
 
+	&__file {
+		position: relative;
+		display: block;
+		width: 100%;
+		color: var(--secondary);
+		font-family: var(--font-secondary);
+		border: 4px dashed var(--secondary);
+		border-radius: 5px;
+
+		&::after {
+			position: absolute;
+			top: 50%;
+			right: 15px;
+			width: 30px;
+			height: auto;
+			aspect-ratio: 3/4;
+			background: url(assets/images/icon-file.png) no-repeat 50% / contain;
+			transform: translateY(-50%);
+			content: "";
+			pointer-events: none;
+		}
+
+		input {
+			display: none;
+			appearance: none;
+		}
+
+		label {
+			display: block;
+			width: 100%;
+			min-height: 45px;
+			padding: 15px 50px 15px 15px;
+			background: #fff;
+			background-origin: padding-box;
+			border-radius: 5px;
+		}
+	}
+
 	&__submit {
 		width: 100%;
 		margin-top: 20px;

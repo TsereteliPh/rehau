@@ -123,6 +123,7 @@ function send_mail() {
 	if ( $_POST['form_name'] == 'Заявка' && ! wp_verify_nonce( $_POST['welcome-callback-nonce'], $_POST['form_name'] ) ) exit;
 	if ( $_POST['form_name'] == 'Замер' && ! wp_verify_nonce( $_POST['modal-measurements-nonce'], $_POST['form_name'] ) ) exit;
 	if ( $_POST['form_name'] == 'Замерщик' && ! wp_verify_nonce( $_POST['form-measurer-nonce'], $_POST['form_name'] ) ) exit;
+	if ( $_POST['form_name'] == 'Расчет' && ! wp_verify_nonce( $_POST['form-project-nonce'], $_POST['form_name'] ) ) exit;
 
 	$form_name = $_POST['form_name'];
 	$mail = '';
