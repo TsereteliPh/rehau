@@ -1,0 +1,229 @@
+.map {
+	margin-top: 60px;
+
+	@include xs {
+		margin-top: 30px;
+	}
+
+	&__title {
+		position: relative;
+		z-index: var(--ui-index-2);
+		max-width: 950px;
+		margin: 0 auto;
+		color: var(--primary);
+		text-align: center;
+
+		span {
+			display: block;
+			color: var(--fc-dark);
+		}
+	}
+
+	&__wrapper {
+		position: relative;
+		min-height: 670px;
+		margin-top: 50px;
+		padding-top: 125px;
+
+		@include md {
+			display: flex;
+			flex-direction: column;
+			gap: 30px;
+			min-height: auto;
+			margin-top: 30px;
+			padding-top: 0;
+		}
+
+		&::after {
+			position: absolute;
+			top: -340px;
+			left: 0;
+			width: 100%;
+			height: auto;
+			aspect-ratio: 1920/1020;
+			background: url(assets/images/map-clouds-bg.png) no-repeat 50% / contain;
+			opacity: 0.8;
+			content: "";
+			pointer-events: none;
+
+			@include hg {
+				top: -220px;
+			}
+
+			@include md {
+				top: -80px;
+			}
+		}
+	}
+
+	&__holder {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		@include md {
+			position: static;
+			order: 1;
+			height: 500px;
+		}
+
+		@include xs {
+			height: 400px;
+		}
+
+		[class*="copyrights"] {
+			display: none;
+		}
+	}
+
+	&__container {
+		z-index: var(--ui-index-2);
+		display: flex;
+		gap: 60px;
+		justify-content: space-between;
+		pointer-events: none;
+
+		@include md {
+			align-items: center;
+		}
+
+		@include sm {
+			flex-direction: column;
+			gap: 30px;
+		}
+	}
+
+	&__info,
+	&__form-wrapper {
+		height: fit-content;
+		pointer-events: all;
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		font-size: 20px;
+		line-height: 1;
+
+		@include hg {
+			padding-left: 50px;
+		}
+
+		@include md {
+			padding-left: 0;
+		}
+
+		@include sm {
+			text-align: center;
+		}
+
+		@include xs {
+			font-size: 18px;
+		}
+
+		a {
+			@include ui-link(var(--fc-dark));
+		}
+	}
+
+	&__info-label {
+
+		span {
+			color: var(--primary);
+		}
+	}
+
+	&__info-address {
+		max-width: 250px;
+
+		@include sm {
+			margin: 0 auto;
+		}
+	}
+
+	&__form-wrapper {
+		width: 100%;
+		max-width: 410px;
+		padding: 40px;
+		background: rgba(#eee, 0.8);
+		border-radius: 10px;
+		box-shadow: var(--shadow);
+
+		@include md {
+			max-width: 350px;
+			padding: 30px;
+		}
+
+		@include sm {
+			max-width: 450px;
+		}
+
+		@include xs {
+			padding: 20px;
+		}
+	}
+
+	&__form-label {
+		font-size: 20px;
+		line-height: 1;
+
+		@include sm {
+			text-align: center;
+		}
+
+		@include xs {
+			font-size: 16px;
+		}
+
+		span {
+			display: block;
+			font-size: 12px;
+		}
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		align-items: center;
+		width: 100%;
+		margin-top: 40px;
+
+		@include sm {
+			margin-top: 20px;
+		}
+	}
+
+	&__form-input {
+		color: #616161;
+		background: #d9d9d9;
+
+		&::placeholder {
+			color: #616161;
+		}
+	}
+
+	&__form-submit {
+		min-width: 220px;
+		margin-top: 15px;
+		padding: 20px 15px;
+
+		@include xs {
+			padding: 15px 10px;
+		}
+	}
+
+	&__form-policy {
+		max-width: 220px;
+		color: #616161;
+		font-size: 12px;
+		text-align: center;
+
+		a {
+			@include ui-link(var(--primary));
+		}
+	}
+}
