@@ -40,6 +40,7 @@ function accordion() {
 		const accordionBtnsClose = () => {
 			for (let btn of accordionBtns) {
 				btn.classList.remove('active');
+				btn.parentNode.classList.remove('active');
 				btn.nextElementSibling.style.maxHeight = 0;
 			}
 		}
@@ -51,6 +52,7 @@ function accordion() {
 				} else {
 					accordionBtnsClose();
 					this.classList.add('active');
+					this.parentNode.classList.add('active');
 					slideToggle(this.nextElementSibling);
 				}
 			})
