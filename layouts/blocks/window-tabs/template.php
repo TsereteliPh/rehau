@@ -1,4 +1,4 @@
-<section class="window-tabs">
+<section class="window-tabs" id="window-tabs">
 	<div class="container">
 		<?php get_template_part( '/layouts/partials/title', null, array(
 			'class' => 'window-tabs__title',

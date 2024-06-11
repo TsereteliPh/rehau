@@ -1,4 +1,4 @@
-<section class="glazing-types">
+<section class="glazing-types" id="glazing-types">
 	<div class="container">
 		<?php get_template_part( '/layouts/partials/title', null, array(
 			'class' => 'glazing-types__title',

@@ -1,4 +1,4 @@
-<section class="peculiarities">
+<section class="peculiarities" id="peculiarities">
 	<div class="container peculiarities__container swiper">
 		<?php get_template_part( '/layouts/partials/title', null, array(
 			'class' => 'peculiarities__title',

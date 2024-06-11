@@ -1,4 +1,4 @@
-<section class="extra-components">
+<section class="extra-components" id="extra-components">
 	<div class="container">
 		<?php get_template_part( '/layouts/partials/title', null, array(
 			'class' => 'extra-components__title',

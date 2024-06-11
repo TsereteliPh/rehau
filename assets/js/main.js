@@ -371,6 +371,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
 	if (header && window.innerWidth <= 768) {
 		const headerBurger = header.querySelector('.header__burger');
 		const headerDrop = header.querySelector('.header__drop');
+		const headerLinks = header.querySelectorAll('a[href*="#"]');
 
 		const dropOpener = () => {
 			header.classList.add('active');
@@ -385,6 +386,20 @@ document.addEventListener('DOMContentLoaded', function(e) {
 			headerDrop.style.maxHeight = 0;
 			document.body.style.overflow = 'visible';
 		}
+
+		headerLinks.forEach(link => {
+			link.addEventListener('click', function(evt) {
+				evt.preventDefault();
+
+				const blockID = link.getAttribute('href').substring(1);
+				document.getElementById(blockID).scrollIntoView({
+					behavior: 'smooth',
+					block: 'center'
+				})
+
+				if (window.innerWidth <= 768) dropCloser();
+			})
+		});
 
 		headerBurger.addEventListener('click', function() {
 			if (this.classList.contains('active')) {

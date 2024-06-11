@@ -1,4 +1,4 @@
-<section class="form-measurer">
+<section class="form-measurer" id="form-measurer">
 	<div class="container--small form-measurer__container">
 		<?php get_template_part( '/layouts/partials/title', null, array(
 			'class' => 'form-measurer__title',

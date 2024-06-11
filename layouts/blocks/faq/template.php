@@ -1,4 +1,4 @@
-<section class="faq">
+<section class="faq" id="faq">
 	<div class="container--small faq__container">
 		<?php get_template_part( '/layouts/partials/title', null, array(
 			'class' => 'faq__title',

@@ -1,4 +1,4 @@
-<section class="main-text">
+<section class="main-text" id="main-text">
 	<div class="container--small">
 		<?php get_template_part( '/layouts/partials/title', null, array(
 			'class' => 'main-text__title',

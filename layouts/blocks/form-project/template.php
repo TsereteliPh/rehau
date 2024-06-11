@@ -1,4 +1,4 @@
-<section class="form-project">
+<section class="form-project" id="form-project">
 	<div class="container--small form-project__container">
 		<?php get_template_part( '/layouts/partials/title', null, array(
 			'class' => 'form-project__title',
