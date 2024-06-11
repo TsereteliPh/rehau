@@ -1,5 +1,76 @@
 .main-form {
+	width: 100%;
 	max-width: 500px;
+
+	&--glass {
+		max-width: 410px;
+		padding: 40px;
+		background: rgba(#eee, 0.8);
+		border-radius: 10px;
+		box-shadow: var(--shadow);
+
+		@include xs {
+			padding: 20px;
+		}
+
+		.main-form__label {
+			font-size: 20px;
+			line-height: 1;
+
+			@include sm {
+				text-align: center;
+			}
+
+			@include xs {
+				font-size: 16px;
+			}
+
+			span {
+				display: block;
+				font-size: 12px;
+			}
+		}
+
+		.main-form__form {
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+			align-items: center;
+			width: 100%;
+			max-width: none;
+			margin-top: 40px;
+
+			@include sm {
+				margin-top: 20px;
+			}
+		}
+
+		.main-form__input {
+			color: #616161;
+			background: #d9d9d9;
+
+			&::placeholder {
+				color: #616161;
+			}
+		}
+
+		.main-form__submit {
+			min-width: 220px;
+			margin-top: 15px;
+			padding: 20px 15px;
+
+			@include xs {
+				padding: 15px 10px;
+			}
+		}
+
+		.main-form__policy {
+			max-width: 220px;
+			margin-top: 0;
+			color: #616161;
+			text-align: center;
+		}
+	}
 
 	&__text {
 		font-size: 24px;

@@ -96,7 +96,7 @@
 	}
 
 	&__info,
-	&__form-wrapper {
+	&__form {
 		height: fit-content;
 		pointer-events: all;
 	}
@@ -144,13 +144,7 @@
 		}
 	}
 
-	&__form-wrapper {
-		width: 100%;
-		max-width: 410px;
-		padding: 40px;
-		background: rgba(#eee, 0.8);
-		border-radius: 10px;
-		box-shadow: var(--shadow);
+	&__form {
 
 		@include md {
 			max-width: 350px;
@@ -159,71 +153,6 @@
 
 		@include sm {
 			max-width: 450px;
-		}
-
-		@include xs {
-			padding: 20px;
-		}
-	}
-
-	&__form-label {
-		font-size: 20px;
-		line-height: 1;
-
-		@include sm {
-			text-align: center;
-		}
-
-		@include xs {
-			font-size: 16px;
-		}
-
-		span {
-			display: block;
-			font-size: 12px;
-		}
-	}
-
-	&__form {
-		display: flex;
-		flex-direction: column;
-		gap: 15px;
-		align-items: center;
-		width: 100%;
-		margin-top: 40px;
-
-		@include sm {
-			margin-top: 20px;
-		}
-	}
-
-	&__form-input {
-		color: #616161;
-		background: #d9d9d9;
-
-		&::placeholder {
-			color: #616161;
-		}
-	}
-
-	&__form-submit {
-		min-width: 220px;
-		margin-top: 15px;
-		padding: 20px 15px;
-
-		@include xs {
-			padding: 15px 10px;
-		}
-	}
-
-	&__form-policy {
-		max-width: 220px;
-		color: #616161;
-		font-size: 12px;
-		text-align: center;
-
-		a {
-			@include ui-link(var(--primary));
 		}
 	}
 }

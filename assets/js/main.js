@@ -321,6 +321,48 @@ if (peculiaritiesCarousel && window.innerWidth < 992) {
 	});
 }
 
+// Слайдер blocks/quiz
+const quizForm = document.querySelector('.quiz__form');
+
+if (quizForm) {
+	let quizSwiper = new Swiper(quizForm, {
+		allowTouchMove: false,
+		slidesPerView: 1,
+		effect: 'fade',
+		fadeEffect: {
+			crossFade: true
+		},
+		navigation: {
+			nextEl: '.quiz__next',
+			prevEl: '.quiz__prev',
+		},
+		pagination: {
+			el: '.quiz__pagination',
+			bulletClass: 'quiz__pagination-bullet',
+			bulletActiveClass: 'active'
+		},
+		on: {
+			init: function () {
+				const quizSubmitTrigger = quizForm.querySelector('.js-quiz-submit-trigger');
+				const quizSubmit = quizForm.querySelector('.js-quiz-submit');
+				const quizInput = quizForm.querySelector('.js-quiz-input');
+
+				quizSubmitTrigger.addEventListener('click', function () {
+					let quizData = '';
+					quizForm.querySelectorAll('input:not(:disabled):not([name=policy]):checked').forEach(item => {
+						quizData += item.name + ' - ' + item.value + '<br/>';
+					});
+					quizInput.value = quizData;
+
+					quizSubmit.click();
+
+					if (quizForm.checkValidity()) quizSwiper.slideTo(0);
+				});
+			}
+		}
+	});
+}
+
 // Функционал шапки сайта
 
 document.addEventListener('DOMContentLoaded', function(e) {

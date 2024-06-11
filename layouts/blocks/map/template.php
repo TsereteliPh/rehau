@@ -31,21 +31,21 @@
 				<?php endif; ?>
 			</div>
 
-			<div class="map__form-wrapper">
-				<div class="map__form-label">
+			<div class="main-form main-form--glass map__form">
+				<div class="main-form__label">
 					Введите<br>
 					ваши данные,
 					<span>чтобы сделать рассчет</span>
 				</div>
 
-				<form method="POST" class="map__form" name="Данные">
-					<input type="text" class="input map__form-input" name="client_name" placeholder="Имя" required>
+				<form method="POST" class="main-form__form" name="Данные">
+					<input type="text" class="input main-form__input" name="client_name" placeholder="Имя" required>
 
-					<input type="tel" class="input map__form-input" name="client_tel" placeholder="Телефон" required>
+					<input type="tel" class="input main-form__input" name="client_tel" placeholder="Телефон" required>
 
-					<button class="btn map__form-submit" type="submit">Отправить</button>
+					<button class="btn main-form__submit" type="submit">Отправить</button>
 
-					<div class="map__form-policy">
+					<div class="main-form__policy">
 						Нажимая на кнопку вы подтверждаете условия
 						<a href="<?php echo get_privacy_policy_url(); ?>">кофиденциальности</a>
 					</div>
